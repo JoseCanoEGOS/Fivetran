@@ -1,0 +1,21 @@
+
+version: 2
+
+sources:
+  - name: fivetran
+    description: "Fivetran source data"
+    database: FIVETRAN_DATABASE
+    schema: google_sheets
+    tables:
+      - name: test_data
+        description: "A table from Fivetran"
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
